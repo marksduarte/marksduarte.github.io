@@ -1,283 +1,408 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Web Developer" />
+    <meta name="author" content="Marks Duarte" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Web Developer" />
-  <meta name="author" content="Marks Duarte" />
+    <title>Marks Duarte - Web Developer</title>
 
-  <title>Marks Duarte - Web Developer</title>
+    <!-- Custom fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <!-- Custom fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-    type="text/css" />
+    <!-- Theme CSS -->
+    <link href="css/marksduarte.min.css" rel="stylesheet" />
 
-  <link rel="icon" type="image/png" sizes="192x192" href="/img/profile_marksduarte.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/profile_marksduarte.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/img/profile_marksduarte.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/profile_marksduarte.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/profile.jpg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/profile.jpg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/profile.jpg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/profile.jpg" />
 
-  <link rel="manifest" href="/img/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#ffffff" />
-  <!-- Theme CSS -->
-  <link href="css/marksduarte.min.css" rel="stylesheet" />
-</head>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="/img/favicon/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    
+  </head>
 
-<body id="page-top">
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Marks Duarte</a>
-      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-        aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#artigos">Artigos</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contato</a>
-          </li>
-        </ul>
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"
+          >Marks Duarte</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#portfolio"
+                >Habilidades</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#about"
+                >Sobre</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#contact"
+                >Contato</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a 
+                type="button"
+                id="openWhatsappAPIModal"
+                data-toggle="modal" 
+                data-target="#waAPI"
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                >WhatsApp API</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="waAPI" tabindex="-1" aria-labelledby="waAPILabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="waAPILabel">Whatsapp API</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="waPhoneNumber">Número de telefone</label>
+              <input id="waPhoneNumber" type="text" class="form-control phone" value="55">
+            </div>
+            <div class="form-group">
+              <label for="waMessage">Mensagem</label>
+              <textarea id="waMessage" class="form-control" cols="30" rows="10" maxlength="4096"></textarea>
+              <label id="waMessageSpan" class="text-muted">
+                <span id="count">0</span>
+                <span>de 4096 caracteres</span>
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button id="waRedirect" type="button" class="btn btn-primary" 
+              onclick="redirectToWhatsappAPI()">Redirecionar</button>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
 
-  <!-- Masthead -->
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-      <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5 rounded-circle" src="img/profile_marksduarte.png" alt="Avatar" />
+    <!-- Masthead -->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <img
+          class="masthead-avatar mb-5 rounded-circle"
+          src="img/profile.jpg"
+          alt="Avatar"
+        />
 
-      <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Marks Duarte</h1>
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0">Marks Duarte</h1>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-laptop-code"></i>
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
-        <div class="divider-custom-line"></div>
+
+        <!-- Masthead Subheading -->
+        <p class="masthead-subheading font-weight-light mb-0">Web Developer</p>
       </div>
+    </header>
 
-      <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">
-        Web Developer
-      </p>
-    </div>
-  </header>
+    <!-- Portfolio Section -->
+    <section class="page-section portfolio" id="portfolio">
+      <div class="container">
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0"
+        >
+          Habilidades
+        </h2>
 
-  <!-- Portfolio Section -->
-  <!-- <section class="page-section portfolio" id="portfolio">
-    <div class="container">
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-        Portfolio
-      </h2>
-
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-laptop-code"></i>
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
-        <div class="divider-custom-line"></div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="mx-auto">
-            <div class="card">
-              <div class="card-body">
-                <img class="card-im-top" src="img/portfolio/github.png" height="48px" />
-                <div class="card-title">
-                  <h3>Google Maps Calculator</h3>
-                  <p class="card-text">
-                    Extensão para Google Chrome para calcular o consumo de
-                    combustível baseado no resultado do trajeto.
-                  </p>
-                  <a href="https://github.com/marksduarte/googlemaps-calculator" target="_Blank">Repositório</a>
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="img/icons/java-icon.svg"
+                    alt="Java logo"
+                    class="card-im-top"
+                  />
+                  <div class="card-title">
+                    <h3>Java</h3>
+                    <p class="card-text">
+                      <div class="progress">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 90%; background-color: #4e7896"
+                          aria-valuenow="90"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                        90%
+                        </div>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="img/icons/springio-icon.svg"
+                    alt="Javascript logo"
+                    class="card-im-top"
+                  />
+                  <div class="card-title">
+                    <h3>Spring Boot</h3>
+                    <p class="card-text">
+                      <div class="progress">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 75%; background-color: #68bd45"
+                          aria-valuenow="75"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                        75%
+                        </div>
+                      </div>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <img
+                    src="img/icons/angular-icon.svg"
+                    alt="Angular logo"
+                    class="card-im-top"
+                  />
+                  <div class="card-title">
+                    <h3>Angular</h3>
+                    <p class="card-text">
+                      <div class="progress">
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style="width: 50%; background-color: #e23237"
+                          aria-valuenow="50"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
+                        50%
+                        </div>
+                      </div>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section> -->
-  
-   <!-- Articles Section -->
-   <section class="page-section portfolio" id="portfolio">
-    <div class="container">
-      <!-- Articles Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-        Artigos
-      </h2>
+    </section>
 
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
+    <!-- About Section -->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <!-- About Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          Sobre
+        </h2>
 
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="mx-auto">
-            <a class="card" href="./pages/articles/war_deploy_on_tomcat.md">
-              <div class="card-body">
-                <div  class="card-title">
-                  <h3>Fazer o deploy WAR diretamente no Tomcat</h3>                  
-                </div>
-              </div>
-            </a>
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-laptop-code"></i>
           </div>
+          <div class="divider-custom-line"></div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="mx-auto">
-            <a class="card" href="./pages/articles/remove_office_key.md">
-              <div class="card-body">
-                <div  class="card-title">
-                  <h3>Remover chave de ativação do Microsoft Office</h3>                  
-                </div>
-              </div>
-            </a>
+        <!-- About Section Content -->
+        <div class="row">
+          <div class="col-lg mr-auto text-center">
+            <p class="lead">
+              Desenvolvedor web focado no back-end, com conhecimentos de
+              front-end <br />
+              e com experiência em planilhas do Microsoft Excel com
+              VBA.
+            </p>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section class="page-section" id="contact">
+      <div class="container">
+        <!-- Contact Section Heading -->
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0"
+        >
+          Contato
+        </h2>
 
-  <!-- About Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="container">
-      <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">
-        Sobre
-      </h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-laptop-code"></i>
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
-        <div class="divider-custom-line"></div>
-      </div>
 
-      <!-- About Section Content -->
-      <div class="row">
-        <div class="col-lg mr-auto text-center">
-          <p class="lead">
-            Desenvolvedor web focado no back-end, com conhecimentos de
-            front-end <br />
-            e com bastante experiência em planilhas do Microsoft Excel com
-            VBA.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <!-- Contact Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-        Contato
-      </h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Contact Section Form -->
-      <div class="row text-center">
-        <div class="col-lg-6">
-          <a class="lead" href="mailto:marksduarte@gmail.com"><i class="fas fa-envelope"></i> marksduarte@gmail.com</a>
-        </div>
-        <div class="col-lg-6">
-          <a class="lead" href="https://api.whatsapp.com/send?phone=5561993045057"><i class="fab fa-whatsapp"></i> +55
-            61 99304-5057</a>
+        <!-- Contact Section Form -->
+        <div class="row text-center">
+          <div class="col-lg-6">
+            <a class="lead" href="mailto:contato@marksduarte.dev"
+              ><i class="fas fa-envelope"></i> contato@marksduarte.dev</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <a
+              class="lead"
+              href="https://api.whatsapp.com/send?phone=5561993045057"
+              ><i class="fab fa-whatsapp"></i> +55 61 99304-5057</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <div class="row">
-        <!-- Footer About Text -->
-        <div class="col-lg-4"></div>
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Footer About Text -->
+          <div class="col-lg-4"></div>
 
-        <!-- Footer Social Icons -->
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h4 class="text-uppercase mb-4">Redes Sociais</h4>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/marksduarte" target="_blank">
-            <i class="fab fa-fw fa-github"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/marks_duarte" target="_blank">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-          <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/marksduarte/"
-            target="_blank">
-            <i class="fab fa-fw fa-linkedin-in"></i>
-          </a>
+          <!-- Footer Social Icons -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Redes Sociais</h4>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://github.com/marksduarte"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-github"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://twitter.com/marks_duarte"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-twitter"></i>
+            </a>
+            <a
+              class="btn btn-outline-light btn-social mx-1"
+              href="https://www.linkedin.com/in/marksduarte/"
+              target="_blank"
+            >
+              <i class="fab fa-fw fa-linkedin-in"></i>
+            </a>
+          </div>
+
+          <!-- Footer About Text -->
+          <div class="col-lg-4"></div>
         </div>
-
-        <!-- Footer About Text -->
-        <div class="col-lg-4"></div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Copyright Section -->
-  <section class="copyright py-4 text-center text-white">
-    <div class="container">
-      <small>Copyright &copy; Marks Duarte 2019</small>
-    </div>
-  </section>
+    <!-- Copyright Section -->
+    <section class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Marks Duarte 2019</small>
+      </div>
+    </section>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Plugin JavaScript-->
-  <script src="vendor/jquery-mask-plugin/jquery.mask.min.js"></script>
+    <!-- Plugin JavaScript-->
+    <script src="vendor/jquery-mask-plugin/jquery.mask.min.js"></script>
 
-  <!-- Contact Form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/marksduarte.min.js"></script>
-</body>
-
+    <!-- Custom scripts for this template -->
+    <script src="js/marksduarte.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a1107b690f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

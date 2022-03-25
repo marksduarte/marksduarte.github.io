@@ -58,6 +58,25 @@
     }).on("blur", ".floating-label-form-group", function() {
       $(this).removeClass("floating-label-form-group-with-focus");
     });
+    // Mask pt-BR
+    $('.phone').mask('+00 (00) 00000-0000');
+    $('#waMessage').on('input', function() {
+      $('#waMessageSpan #count').text($('#waMessage').val().length)
+    });
   });
 
 })(jQuery); // End of use strict
+
+function redirectToWhatsappAPI() {
+  let waURL = 'https://api.whatsapp.com/send?phone=';
+  const waPhoneNumber = $('#waPhoneNumber').val().replace(/\D/g, '');
+  const waMessage = $('#waMessage').val();
+
+  waURL = waURL.concat(waPhoneNumber);
+
+  if (waMessage) {
+    waURL = waURL.concat('&text=').concat(waMessage);
+  }
+
+  window.open(waURL, '_blank')
+}
