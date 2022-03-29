@@ -11153,6 +11153,7 @@ a.text-dark:focus {
 
 .masthead .masthead-avatar {
   width: 15rem;
+  background-color: #fff;
 }
 
 @media (min-width: 992px) {
