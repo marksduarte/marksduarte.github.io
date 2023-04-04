@@ -86,8 +86,8 @@
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="#article"
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger active"
                 >Artigos</a
               >
             </li>
@@ -112,7 +112,7 @@
         <h2
           class="page-section-heading text-center text-uppercase text-secondary mb-0"
         >
-          Como Migrar Distros WSL 2
+          Limitar Recursos WSL 2
         </h2>
 
         <div class="divider-custom">
@@ -126,60 +126,41 @@
         <div class="row">
           <div class="col-lg justify-content-start lead">
             <p>
-              Para quem gosta de manter seus arquivos em partições ou mesmo em
-              discos separados, o Windows não ajuda muito na hora da instalação
-              das distribuições Linux utilizando o WSL, e para fazermos essa
-              migração só precisamos seguir alguns passos bem simples.
+              Ao utilizarmos o WSL2 no Windows, por padrão, o consumo de memória
+              e de processamento fica sem restrição e esse comportamento pode
+              acabar afetando o desempenho do Host.
             </p>
             <p>
-              Mas antes, vamos listar as distribuições instaladas para
-              escolhermos quais serão movidas:
+              Para contornarmos tal situação, podemos criar um arquivo de
+              configuração chamado '.wslconfig' na pasta de usuário localizada
+              em: c:\users\username\.wslconfig.
             </p>
+            <p>Agora informe as restrições desejadas conforme exemplo:</p>
             <pre>
               <code>
-  <span class="code-cmd">wsl -l</span>
-  Distribuições do Subsistema do Windows para Linux:
-  docker-desktop (Padrão)
-  Ubuntu-22.04
-  docker-desktop-data
+  [wsl2]
+  memory=4GB # limita a memória da VM.
+  processors=2 # limita o uso da VM para 2 processadores virtuais
               </code>
             </pre>
             <p>
-              Agora vamos fazer o processo de exportação da distribuição para um
-              arquivo .tar.
-            </p>
-            <p>
-              Depois será necessário remover o registro dessa distribuição do
-              WSL e por fim, reimportar informando o novo local de destino.
+              Após salvar as alterações, reinicie o serviço executando o
+              seguinte comando como Administrador:
             </p>
             <pre>
               <code>
-  <span class="code-cmd">wsl --export Ubuntu-22.04 Ubuntu-22.04.tar</span>
-  <span class="code-cmd">wsl --unregister Ubuntu-22.04</span>
-  <span class="code-cmd">wsl --import Ubuntu-22.04 .\path\destino .\Ubuntu-22.04.tar</span>
+  <span class="code-cmd">Restart-Service LxssManager</span>
               </code>
             </pre>
             <p>
-              Atenção: a nova instância será redefinida para o usuário root.
-              Caso tenha criado algum usuário antes, e queira continuar usando o
-              mesmo, faça o seguinte:
+              Para mais informações, você pode consultar a documentação completa
+              em:
+              <a
+                href="https://learn.microsoft.com/pt-br/windows/wsl/wsl-config#wslconfig"
+                >Microsoft - Docs</a
+              >
             </p>
-            <pre>
-              <code>
-  <span class="code-cmd">cd HKCU:\</span>
-  <span class="code-cmd">set-location -path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss\</span>
-  <span class="code-cmd">Get-childitem -recurse -ErrorAction SilentlyContinue | 
-    Get-ItemProperty | Where-Object {$_.DistributionName -like "Ubuntu-22.04"} | 
-    Set-Itemproperty -Name DefaultUid -Value 1000</span>
-              </code>
-            </pre>
-            <p>E assim finalizamos essa primeira, de muitas, dicas.</p>
-            <p>Espero ter ajudado e até a próxima.</p>
-            <p>
-              Ops! Já ia me esquecendo... Você também pode usar o script do
-              #PowerShell que fiz para agilizar esse processo. ;)
-            </p>
-            <script src="https://gist.github.com/marksduarte/f6528f1d0485bbca636fbfeca6ba7687.js"></script>
+            <small>Espero ter ajudado e até a próxima.</small>
           </div>
         </div>
       </div>

@@ -212,6 +212,7 @@ samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
   font-size: 1em;
+  background-color: #11181f;
 }
 
 pre {
@@ -585,8 +586,12 @@ pre {
 
 pre code {
   font-size: inherit;
-  color: inherit;
+  color: white;
   word-break: normal;
+}
+
+code .code-cmd {
+  color: var(--teal);
 }
 
 .pre-scrollable {
@@ -5226,6 +5231,15 @@ input[type="button"].btn-block {
   margin-bottom: 0;
 }
 
+.card-link {
+  min-height: 250px;
+}
+
+.card-link .card-footer {
+  position: absolute; 
+  bottom: 0; 
+}
+
 .card-link:hover {
   text-decoration: none;
 }
@@ -5250,9 +5264,7 @@ input[type="button"].btn-block {
 }
 
 .card-footer {
-  padding: 0.75rem 1.25rem;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-top: 0.125rem solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem .25rem;
 }
 
 .card-footer:last-child {
