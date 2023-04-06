@@ -92,7 +92,7 @@
         <h2
           class="page-section-heading text-center text-uppercase text-secondary mb-0"
         >
-          Como Migrar Distros WSL 2
+          Como fazer deploy de um arquivo "war" diretamente no Apache Tomcat.
         </h2>
 
         <div class="divider-custom">
@@ -106,60 +106,55 @@
         <div class="row">
           <div class="col-lg justify-content-start lead">
             <p>
-              Para quem gosta de manter seus arquivos em partições ou mesmo em
-              discos separados, o Windows não ajuda muito na hora da instalação
-              das distribuições Linux utilizando o WSL, e para fazermos essa
-              migração só precisamos seguir alguns passos bem simples.
-            </p>
-            <p>
-              Mas antes, vamos listar as distribuições instaladas para
-              escolhermos quais serão movidas:
+              Primeiramente crie um usuário no arquivo de configuração.
+              <span class="fs-italic">tomcat-users.xml</span>
             </p>
             <pre>
               <code>
-  <span class="code-cmd">wsl -l</span>
-  Distribuições do Subsistema do Windows para Linux:
-  docker-desktop (Padrão)
-  Ubuntu-22.04
-  docker-desktop-data
+  &lt;user username="username" password="secr3t" 
+    roles="manager-gui, manager-script, manager-jmx"/&gt;
               </code>
             </pre>
             <p>
-              Agora vamos fazer o processo de exportação da distribuição para um
-              arquivo .tar.
-            </p>
-            <p>
-              Depois será necessário remover o registro dessa distribuição do
-              WSL e por fim, reimportar informando o novo local de destino.
+              Verifique o local de instalação do Maven e adicione a propriedade
+              &lt;server&gt; no arquivo settings.xml do Maven.
             </p>
             <pre>
               <code>
-  <span class="code-cmd">wsl --export Ubuntu-22.04 Ubuntu-22.04.tar</span>
-  <span class="code-cmd">wsl --unregister Ubuntu-22.04</span>
-  <span class="code-cmd">wsl --import Ubuntu-22.04 .\path\destino .\Ubuntu-22.04.tar</span>
+  &lt;server&gt;  
+    &lt;id&gt;server-id&lt;id&gt; 
+    &lt;username&gt;username&lt;/username&gt; 
+    &lt;password&gt;secr3t&lt;/password&gt; 
+  &lt;/server&gt; 
               </code>
             </pre>
             <p>
-              Atenção: a nova instância será redefinida para o usuário root.
-              Caso tenha criado algum usuário antes, e queira continuar usando o
-              mesmo, faça o seguinte:
+              Agora basta configurar plugin do Tomcat 7 no pom.xml. Mas não se
+              assuste, esse plugin também serve para versões posteriores.
             </p>
             <pre>
               <code>
-  <span class="code-cmd">cd HKCU:\</span>
-  <span class="code-cmd">set-location -path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss\</span>
-  <span class="code-cmd">Get-childitem -recurse -ErrorAction SilentlyContinue | 
-    Get-ItemProperty | Where-Object {$_.DistributionName -like "Ubuntu-22.04"} | 
-    Set-Itemproperty -Name DefaultUid -Value 1000</span>
+  &lt;plugin&gt;
+    &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;  
+    &lt;version&gt;2.0&lt;/version&gt;
+    &lt;configuration&gt;
+    &lt;server&gt;server-id&lt;/server&gt;
+    &lt;url&gt;http://localhost:8080/manager/text&lt;/url&gt;  
+    &lt;path&gt;/app&lt;/path&gt;
+    &lt;/configuration&gt;
+  &lt;/plugin&gt;
               </code>
             </pre>
-            <p>E assim finalizamos essa primeira, de muitas, dicas.</p>
-            <p>Espero ter ajudado e até a próxima.</p>
-            <p>
-              Ops! Já ia me esquecendo... Você também pode usar o script do
-              #PowerShell que fiz para agilizar esse processo. ;)
-            </p>
-            <script src="https://gist.github.com/marksduarte/f6528f1d0485bbca636fbfeca6ba7687.js"></script>
+            <p>E para finalizar, execute o comando:</p>
+            <pre>
+              <code>
+  mvn tomcat7:deploy
+  mvn tomcat7:undeploy
+  mvn tomcat7:redeploy
+              </code>
+            </pre>
+            <p>inté ;)</p>
           </div>
         </div>
       </div>

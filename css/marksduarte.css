@@ -5310,6 +5310,14 @@ input[type="button"].btn-block {
   border-bottom-left-radius: calc(0.5rem - 0.125rem);
 }
 
+.card-img-bottom-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 1.25rem;
+}
+
+
 .card-deck {
   display: -webkit-box;
   display: -ms-flexbox;
