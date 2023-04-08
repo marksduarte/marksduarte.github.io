@@ -60,15 +60,8 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#article"
-                >Artigos</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#portfolio"
-                >Habilidades</a
+                href="#tips"
+                >Dicas</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
@@ -194,13 +187,13 @@
       </div>
     </header>
 
-    <!-- Articles Section -->
-    <section class="page-section portfolio" id="article">
+    <!-- Tips Section -->
+    <section class="page-section portfolio" id="tips">
       <div class="container">
         <h2
           class="page-section-heading text-center text-uppercase text-secondary mb-0"
         >
-          Artigos
+          Dicas
         </h2>
 
         <div class="divider-custom">
@@ -212,11 +205,12 @@
         </div>
         <!-- Cards -->
         <div class="row card-group">
+
           <div class="col-md-6 col-lg-4">
             <div class="mx-auto">
               <a
                 class="card card-link"
-                href="pages/articles/migrar-distro-wsl.html"
+                href="pages/windows/migrar-distro-wsl.html"
               >
                 <div class="card-body">
                   <img
@@ -245,7 +239,7 @@
             <div class="mx-auto">
               <a
                 class="card card-link"
-                href="pages/articles/limitar-recursos-wsl.html"
+                href="pages/windows/limitar-recursos-wsl.html"
               >
                 <div class="card-body">
                   <img
@@ -274,7 +268,7 @@
             <div class="mx-auto">
               <a
                 class="card card-link"
-                href="pages/articles/java/deploy-war-tomcat.html"
+                href="pages/java/deploy-war-tomcat.html"
               >
                 <div class="card-body">
                   <img
@@ -283,7 +277,7 @@
                     class="card-img-bottom-right"
                   />
                   <div class="card-title">
-                    <h4 class="text-dark">Deploy WAR no Tomcat</h3>
+                    <h4 class="text-dark">Deploy WAR no Tomcat</h4>
                   </div>
                   <div class="card-text">
                     Aprenda como fazer o deploy de uma aplicação empacotada como
@@ -299,117 +293,36 @@
               </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section class="page-section portfolio" id="portfolio">
-      <div class="container">
-        <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
-          Habilidades
-        </h2>
-
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <div class="row">
-          <!-- java -->
           <div class="col-md-6 col-lg-4">
             <div class="mx-auto">
-              <div class="card">
+              <a
+                      class="card card-link"
+                      href="pages/java/spring-boot-admin.html"
+              >
                 <div class="card-body">
                   <img
-                    src="img/icons/java-icon.svg"
-                    alt="Java logo"
-                    class="card-im-top"
+                          src="img/icons/spring-boot-icon.svg"
+                          alt="Java logo"
+                          class="card-img-bottom-right"
                   />
                   <div class="card-title">
-                    <h3>Java</h3>
-                    <div class="card-text">
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 100%; background-color: #4e7896"
-                          aria-valuenow="100"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        ></div>
-                      </div>
-                    </div>
+                    <h4 class="text-dark">Spring Boot Admin</h4>
+                  </div>
+                  <div class="card-text">
+                    Aprenda como registrar uma aplicação cliente no servidor <strong>Spring Boot Admin</strong>
+                    com uma camada de segurança do Spring Security.
+                  </div>
+
+                  <div class="card-footer">
+                    <span class="badge badge-secondary">#java</span>
+                    <span class="badge badge-secondary">#springboot</span>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
-          <!-- spring -->
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="img/icons/springio-icon.svg"
-                    alt="Javascript logo"
-                    class="card-im-top"
-                  />
-                  <div class="card-title">
-                    <h3>Spring Boot</h3>
-                    <div class="card-text">
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 100%; background-color: #68bd45"
-                          aria-valuenow="100"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- angular -->
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <div class="card">
-                <div class="card-body">
-                  <img
-                    src="img/icons/angular-icon.svg"
-                    alt="Angular logo"
-                    class="card-im-top"
-                  />
-                  <div class="card-title">
-                    <h3>Angular</h3>
-                    <div class="card-text">
-                      <div class="progress">
-                        <div
-                          class="progress-bar"
-                          role="progressbar"
-                          style="width: 100%; background-color: #e23237"
-                          aria-valuenow="100"
-                          aria-valuemin="0"
-                          aria-valuemax="100"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -536,9 +449,6 @@
 
     <!-- Plugin JavaScript-->
     <script src="vendor/jquery-mask-plugin/jquery.mask.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/marksduarte.min.js"></script>

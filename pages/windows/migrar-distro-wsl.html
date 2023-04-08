@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Web Developer"/>
+    <meta name="author" content="Marks Duarte"/>
+
+    <title>Migrar Distros WSL 2</title>
+
+    <!-- Custom fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+            rel="stylesheet"
+            type="text/css"
+    />
+    <link
+            href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+            rel="stylesheet"
+            type="text/css"
+    />
+
+    <!-- Theme CSS -->
+    <link href="/css/marksduarte.min.css" rel="stylesheet"/>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/logo.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/logo.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png"/>
+
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/img/logo.png"/>
+    <meta name="theme-color" content="#ffffff"/>
+</head>
+
+<body id="tips">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html"
+        >Marks Duarte</a
+        >
+        <button
+                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a
+                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="/index.html#article"
+                    >Home</a
+                    >
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a
+                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#tips"
+                    >Dicas</a
+                    >
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a
+                            type="button"
+                            id="openWhatsappAPIModal"
+                            data-toggle="modal"
+                            data-target="#waAPI"
+                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                    >WhatsApp API</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<section class="page-section">
+    <div class="container">
+        <h2
+                class="page-section-heading text-center text-uppercase text-secondary mb-0 pt-lg-5"
+        >
+            Como Migrar Distros WSL 2
+        </h2>
+
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <article class="lead text-justify">
+            <p>
+                Para quem gosta de manter seus arquivos em partições ou mesmo em
+                discos separados, o Windows não ajuda muito na hora da instalação
+                das distribuições Linux utilizando o WSL, e para fazermos essa
+                migração só precisamos seguir alguns passos bem simples.
+            </p>
+            <p>
+                Mas antes, vamos listar as distribuições instaladas para
+                escolhermos quais serão movidas:
+            </p>
+            <pre>
+              <code>
+  <span class="code-cmd">wsl -l</span>
+  Distribuições do Subsistema do Windows para Linux:
+  docker-desktop (Padrão)
+  Ubuntu-22.04
+  docker-desktop-data
+              </code>
+            </pre>
+            <p>
+                Agora vamos fazer o processo de exportação da distribuição para um
+                arquivo .tar.
+            </p>
+            <p>
+                Depois será necessário remover o registro dessa distribuição do
+                WSL e por fim, reimportar informando o novo local de destino.
+            </p>
+            <pre>
+              <code>
+  <span class="code-cmd">wsl --export Ubuntu-22.04 Ubuntu-22.04.tar</span>
+  <span class="code-cmd">wsl --unregister Ubuntu-22.04</span>
+  <span class="code-cmd">wsl --import Ubuntu-22.04 .\path\destino .\Ubuntu-22.04.tar</span>
+              </code>
+            </pre>
+            <p>
+                Atenção: a nova instância será redefinida para o usuário root.
+                Caso tenha criado algum usuário antes, e queira continuar usando o
+                mesmo, faça o seguinte:
+            </p>
+            <pre>
+              <code>
+  <span class="code-cmd">cd HKCU:\</span>
+  <span class="code-cmd">set-location -path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss\</span>
+  <span class="code-cmd">Get-childitem -recurse -ErrorAction SilentlyContinue |
+    Get-ItemProperty | Where-Object {$_.DistributionName -like "Ubuntu-22.04"} |
+    Set-Itemproperty -Name DefaultUid -Value 1000</span>
+              </code>
+            </pre>
+            <p>E assim finalizamos essa primeira, de muitas, dicas.</p>
+            <p>Espero ter ajudado e até a próxima.</p>
+            <p>
+                Ops! Já ia me esquecendo... Você também pode usar o script do
+                #PowerShell que fiz para agilizar esse processo. ;)
+            </p>
+            <script src="https://gist.github.com/marksduarte/f6528f1d0485bbca636fbfeca6ba7687.js"></script>
+        </article>
+    </div>
+</section>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Plugin JavaScript-->
+<script src="/vendor/jquery-mask-plugin/jquery.mask.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="/js/jqBootstrapValidation.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="/js/marksduarte.min.js"></script>
+<script
+        src="https://kit.fontawesome.com/a1107b690f.js"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

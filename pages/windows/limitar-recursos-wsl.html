@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
 
-  <body id="article">
+  <body id="tips">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
       <div class="container">
@@ -66,9 +66,9 @@
             </li>
             <li class="nav-item mx-0 mx-lg-1">
               <a
+                href="#tips"
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#article"
-                >Artigos</a
+                >Dicas</a
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
@@ -87,12 +87,12 @@
     </nav>
 
     <!-- Content Section -->
-    <section class="page-section m-5">
+    <section class="page-section">
       <div class="container">
         <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
+          class="page-section-heading text-center text-uppercase text-secondary mb-0 pt-lg-5"
         >
-          Como fazer deploy de um arquivo "war" diretamente no Apache Tomcat.
+          Limitar Recursos WSL 2
         </h2>
 
         <div class="divider-custom">
@@ -103,60 +103,44 @@
           <div class="divider-custom-line"></div>
         </div>
 
-        <div class="row">
-          <div class="col-lg justify-content-start lead">
-            <p>
-              Primeiramente crie um usuário no arquivo de configuração.
-              <span class="fs-italic">tomcat-users.xml</span>
-            </p>
-            <pre>
+        <section class="lead text-justify">
+          <p>
+            Ao utilizarmos o WSL2 no Windows, por padrão, o consumo de memória
+            e de processamento fica sem restrição e esse comportamento pode
+            acabar afetando o desempenho do Host.
+          </p>
+          <p>
+            Para contornarmos tal situação, podemos criar um arquivo de
+            configuração chamado '.wslconfig' na pasta de usuário localizada
+            em: c:\users\username\.wslconfig.
+          </p>
+          <p>Agora informe as restrições desejadas conforme exemplo:</p>
+          <pre>
               <code>
-  &lt;user username="username" password="secr3t" 
-    roles="manager-gui, manager-script, manager-jmx"/&gt;
+  [wsl2]
+  memory=4GB # limita a memória da VM.
+  processors=2 # limita o uso da VM para 2 processadores virtuais
               </code>
             </pre>
-            <p>
-              Verifique o local de instalação do Maven e adicione a propriedade
-              &lt;server&gt; no arquivo settings.xml do Maven.
-            </p>
-            <pre>
+          <p>
+            Após salvar as alterações, reinicie o serviço executando o
+            seguinte comando como Administrador:
+          </p>
+          <pre>
               <code>
-  &lt;server&gt;  
-    &lt;id&gt;server-id&lt;id&gt; 
-    &lt;username&gt;username&lt;/username&gt; 
-    &lt;password&gt;secr3t&lt;/password&gt; 
-  &lt;/server&gt; 
+  <span class="code-cmd">Restart-Service LxssManager</span>
               </code>
             </pre>
-            <p>
-              Agora basta configurar plugin do Tomcat 7 no pom.xml. Mas não se
-              assuste, esse plugin também serve para versões posteriores.
-            </p>
-            <pre>
-              <code>
-  &lt;plugin&gt;
-    &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
-    &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;  
-    &lt;version&gt;2.0&lt;/version&gt;
-    &lt;configuration&gt;
-    &lt;server&gt;server-id&lt;/server&gt;
-    &lt;url&gt;http://localhost:8080/manager/text&lt;/url&gt;  
-    &lt;path&gt;/app&lt;/path&gt;
-    &lt;/configuration&gt;
-  &lt;/plugin&gt;
-              </code>
-            </pre>
-            <p>E para finalizar, execute o comando:</p>
-            <pre>
-              <code>
-  mvn tomcat7:deploy
-  mvn tomcat7:undeploy
-  mvn tomcat7:redeploy
-              </code>
-            </pre>
-            <p>inté ;)</p>
-          </div>
-        </div>
+          <p>
+            Para mais informações, você pode consultar a documentação completa
+            em:
+            <a
+                    href="https://learn.microsoft.com/pt-br/windows/wsl/wsl-config#wslconfig"
+            >Microsoft - Docs</a
+            >
+          </p>
+          <p>Espero ter ajudado e até a próxima.</p>
+        </section>
       </div>
     </section>
 
@@ -166,12 +150,6 @@
 
     <!-- Plugin JavaScript -->
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Plugin JavaScript-->
-    <script src="/vendor/jquery-mask-plugin/jquery.mask.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="/js/jqBootstrapValidation.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="/js/marksduarte.min.js"></script>
