@@ -1,136 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8" />
     <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Web Developer"/>
-    <meta name="author" content="Marks Duarte"/>
+    <meta name="description" content="Web Developer" />
+    <meta name="author" content="Marks Duarte" />
+    <meta
+      property="og:url"
+      content="https://marksduarte.dev/pages/java/spring-boot-admin.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Como registrar uma aplicação cliente num servidor de monitoramento
+    Spring Boot Admin."
+    />
+    <meta
+      property="og:description"
+      content="Como registrar uma aplicação cliente num servidor de monitoramento
+    Spring Boot Admin."
+    />
+    <meta property="og:image" content="https://marksduarte.dev/img/logo.jpg" />
 
     <title>Configurar Spring Boot Admin</title>
 
     <!-- Custom fonts -->
     <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-            rel="stylesheet"
-            type="text/css"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
     />
     <link
-            href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-            rel="stylesheet"
-            type="text/css"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
     />
 
     <!-- Theme CSS -->
-    <link href="/css/marksduarte.min.css" rel="stylesheet"/>
+    <link href="/css/marksduarte.min.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" sizes="192x192" href="/img/logo.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="/img/logo.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png" />
 
-    <meta name="msapplication-TileColor" content="#ffffff"/>
-    <meta name="msapplication-TileImage" content="/img/logo.png"/>
-    <meta name="theme-color" content="#ffffff"/>
-</head>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/img/logo.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-<body id="tips">
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
-    <div class="container">
+  <body id="tips">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+      <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="/index.html"
-        >Marks Duarte</a
+          >Marks Duarte</a
         >
         <button
-                class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarResponsive"
-                aria-controls="navbarResponsive"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-            Menu
-            <i class="fas fa-bars"></i>
+          Menu
+          <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="/index.html#tips"
-                    >Home</a
-                    >
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#tips"
-                    >Dicas</a
-                    >
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a
-                            type="button"
-                            id="openWhatsappAPIModal"
-                            data-toggle="modal"
-                            data-target="#waAPI"
-                            class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                    >WhatsApp API</a
-                    >
-                </li>
-            </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/index.html#tips"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#tips"
+                >Dicas</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                type="button"
+                id="openWhatsappAPIModal"
+                data-toggle="modal"
+                data-target="#waAPI"
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                >WhatsApp API</a
+              >
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<!-- Content Section -->
-<section class="page-section">
-    <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 pt-lg-5">
-            Como registrar uma aplicação cliente num servidor de monitoramento Spring Boot Admin.
+    <!-- Content Section -->
+    <section class="page-section">
+      <div class="container">
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0 pt-lg-5"
+        >
+          Como registrar uma aplicação cliente num servidor de monitoramento
+          Spring Boot Admin.
         </h2>
 
         <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-laptop-code"></i>
-            </div>
-            <div class="divider-custom-line"></div>
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="divider-custom-line"></div>
         </div>
 
         <article class="lead text-justify">
-            <p>
-                Existem várias formas de se monitorar sistemas distribuídos e uma que me agrada bastante pela
-                simplicidade de configuração e confiabilidade é o Spring Boot Admin.
-            </p>
-            <p>
-                Nesse tutorial criaremos duas aplicações utilizando o Spring Boot, uma que será o servidor de
-                monitoramento e a outra, o cliente que deverá se registrar para ser monitorado.
-            </p>
-            <p>
-                Também vamos aproveitar para implementar uma camada de segurança utilizando o Spring Security e com
-                o #Maven, poderemos fazer o build das aplicações para serem executadas individualmente.
-            </p>
-            <h3>Versões utilizadas</h3>
-            <ul>
-                <li>Spring Boot: 2.7.10</li>
-                <li>Spring Boot Admin Server: 2.7.10</li>
-                <li>Spring Boot Admin Client: 2.7.10</li>
-            </ul>
-            <br>
-            <h3>Configurando o Servidor</h3>
-            <p>Crie um projeto utilizando o Spring Initilizr com as seguintes dependências:</p>
-            <ul>
-                <li>Starter Web</li>
-                <li>Starter Security</li>
-                <li>Admin Starter Server</li>
-            </ul>
-            <img src="../../img/pages/sba1.jpeg" alt="tela spring initializr" class="img-fluid">
-            <p>Confira se as dependências relacionadas ao Spring Boot Admin foram adicionadas:</p>
-            <pre>
+          <p>
+            Existem várias formas de se monitorar sistemas distribuídos e uma
+            que me agrada bastante pela simplicidade de configuração e
+            confiabilidade é o Spring Boot Admin.
+          </p>
+          <p>
+            Nesse tutorial criaremos duas aplicações utilizando o Spring Boot,
+            uma que será o servidor de monitoramento e a outra, o cliente que
+            deverá se registrar para ser monitorado.
+          </p>
+          <p>
+            Também vamos aproveitar para implementar uma camada de segurança
+            utilizando o Spring Security e com o #Maven, poderemos fazer o build
+            das aplicações para serem executadas individualmente.
+          </p>
+          <h3>Versões utilizadas</h3>
+          <ul>
+            <li>Spring Boot: 2.7.10</li>
+            <li>Spring Boot Admin Server: 2.7.10</li>
+            <li>Spring Boot Admin Client: 2.7.10</li>
+          </ul>
+          <br />
+          <h3>Configurando o Servidor</h3>
+          <p>
+            Crie um projeto utilizando o Spring Initilizr com as seguintes
+            dependências:
+          </p>
+          <ul>
+            <li>Starter Web</li>
+            <li>Starter Security</li>
+            <li>Admin Starter Server</li>
+          </ul>
+          <img
+            src="../../img/pages/sba1.jpeg"
+            alt="tela spring initializr"
+            class="img-fluid"
+          />
+          <p>
+            Confira se as dependências relacionadas ao Spring Boot Admin foram
+            adicionadas:
+          </p>
+          <pre>
               <code>
     ...
     &lt;dependency&gt;
@@ -144,10 +176,11 @@
     ...
               </code>
             </pre>
-            <p>
-                Adicione a anotação @EnableAdminServer em alguma classe de configuração:
-            </p>
-            <pre>
+          <p>
+            Adicione a anotação @EnableAdminServer em alguma classe de
+            configuração:
+          </p>
+          <pre>
 
               <code>
     ...
@@ -164,13 +197,15 @@
               </code>
             </pre>
 
-            <p>
-                Configure o comportamento da aplicação utilizando o arquivo application.yaml. Como adicionamos uma
-                camada de segurança, devemos criar um nome de usuário e senha para logarmos no servidor e também
-                será necessário configurar o login para comunicação entre servidor e cliente.
-            </p>
+          <p>
+            Configure o comportamento da aplicação utilizando o arquivo
+            application.yaml. Como adicionamos uma camada de segurança, devemos
+            criar um nome de usuário e senha para logarmos no servidor e também
+            será necessário configurar o login para comunicação entre servidor e
+            cliente.
+          </p>
 
-            <pre>
+          <pre>
               <code>
     server:
       port: 8081
@@ -209,17 +244,20 @@
               </code>
             </pre>
 
-            <p>
-                Agora vamos configurar o Spring Security criando uma classe e desabilitando o proxy dos beans na
-                anotação @Configuration(proxyBeanMethods = false), pois como vamos trabalhar com @Bean autocontido,
-                podemos evitar o processamento da subclasse CGLIB.
-            </p>
-            <p>
-                Também vamos permitir os acessos às rotas de login e assets e desabilitar a proteção CSRF paras o
-                métodos HTTP POST e HTTP DELETE nas instâncias dos clientes.
-            </p>
+          <p>
+            Agora vamos configurar o Spring Security criando uma classe e
+            desabilitando o proxy dos beans na anotação
+            @Configuration(proxyBeanMethods = false), pois como vamos trabalhar
+            com @Bean autocontido, podemos evitar o processamento da subclasse
+            CGLIB.
+          </p>
+          <p>
+            Também vamos permitir os acessos às rotas de login e assets e
+            desabilitar a proteção CSRF paras o métodos HTTP POST e HTTP DELETE
+            nas instâncias dos clientes.
+          </p>
 
-            <pre>
+          <pre>
               <code>
     package dev.marksduarte.sbaserver;
 
@@ -263,30 +301,39 @@
               </code>
             </pre>
 
-            <p>
-                Pronto, agora é só rodar a aplicação e conferir se o Admin Server está acessível através do endereço
-                <a href="http://localhost:8081/admin-console">http://localhost:8081/admin-console</a> e logar com o
-                usuário e senha informados na configuração.
-            </p>
-
+          <p>
+            Pronto, agora é só rodar a aplicação e conferir se o Admin Server
+            está acessível através do endereço
+            <a href="http://localhost:8081/admin-console"
+              >http://localhost:8081/admin-console</a
+            >
+            e logar com o usuário e senha informados na configuração.
+          </p>
         </article>
 
         <article class="lead text-justify">
-            <h3>Configurando o Cliente</h3>
-            <p>Crie um projeto utilizando o Spring Initilizr com as seguintes dependências:</p>
-            <ul>
-                <li>Starter Web</li>
-                <li>Starter Security</li>
-                <li>Starter Actuator</li>
-                <li>Admin Starter Server</li>
-            </ul>
-            <img src="../../img/pages/sba2.jpeg" alt="tela spring initializr" class="img-fluid">
-            <p>
-                Confira no seu arquivo pom.xml, se a dependência do Spring Boot Admin Client e Spring Actuator foram
-                adicionadas:
-            </p>
+          <h3>Configurando o Cliente</h3>
+          <p>
+            Crie um projeto utilizando o Spring Initilizr com as seguintes
+            dependências:
+          </p>
+          <ul>
+            <li>Starter Web</li>
+            <li>Starter Security</li>
+            <li>Starter Actuator</li>
+            <li>Admin Starter Server</li>
+          </ul>
+          <img
+            src="../../img/pages/sba2.jpeg"
+            alt="tela spring initializr"
+            class="img-fluid"
+          />
+          <p>
+            Confira no seu arquivo pom.xml, se a dependência do Spring Boot
+            Admin Client e Spring Actuator foram adicionadas:
+          </p>
 
-            <pre>
+          <pre>
                 <code>
     ...
     &lt;dependency&gt;
@@ -303,8 +350,11 @@
                 </code>
             </pre>
 
-            <p>Agora vamos configurar o sistema começando pelo arquivo application.yaml:</p>
-            <pre>
+          <p>
+            Agora vamos configurar o sistema começando pelo arquivo
+            application.yaml:
+          </p>
+          <pre>
                 <code>
     ## INFO ENDPOINT
     ## Aqui configuramos as informações sobre o sistema, como nome, descrição, versão e etc.
@@ -402,11 +452,12 @@
                 </code>
             </pre>
 
-            <p>
-                Para simplificar, vamos habilitar todas as requisições para os endpoints do "/actuator/**":
-            </p>
+          <p>
+            Para simplificar, vamos habilitar todas as requisições para os
+            endpoints do "/actuator/**":
+          </p>
 
-            <pre>
+          <pre>
                 <code>
     package dev.marksduarte.sbaclient
     ...
@@ -428,22 +479,28 @@
                 </code>
             </pre>
 
-            <p>Bom, isso já é suficiente para registar nossa aplicação cliente no servidor.</p>
-            <p>
-                Mas caso aconteça alguma exceção do tipo: HttpMessageNotWritableException ou um response error HTTP 416
-                ao tentar acessar o arquivo de log, não se assuste, isso pode acontecer caso seu sistema tenha alguma
-                classe de configuração do Jackson que estenda WebMvcConfigurationSupport.
-            </p>
-            <p>
-                Nesse caso, essa classe pode estar desativando a instanciação dos Beans com as configurações padrões do
-                Spring Boot.
-            </p>
-            <p>
-                Para corrigir esse tipo de problema, podemos criar um Bean customizado e substituir a configuração
-                padrão criada na inicialização do sistema.
-            </p>
+          <p>
+            Bom, isso já é suficiente para registar nossa aplicação cliente no
+            servidor.
+          </p>
+          <p>
+            Mas caso aconteça alguma exceção do tipo:
+            HttpMessageNotWritableException ou um response error HTTP 416 ao
+            tentar acessar o arquivo de log, não se assuste, isso pode acontecer
+            caso seu sistema tenha alguma classe de configuração do Jackson que
+            estenda WebMvcConfigurationSupport.
+          </p>
+          <p>
+            Nesse caso, essa classe pode estar desativando a instanciação dos
+            Beans com as configurações padrões do Spring Boot.
+          </p>
+          <p>
+            Para corrigir esse tipo de problema, podemos criar um Bean
+            customizado e substituir a configuração padrão criada na
+            inicialização do sistema.
+          </p>
 
-            <pre>
+          <pre>
                 <code>
     package dev.marksduarte.sbaclient
     ...
@@ -492,24 +549,79 @@
                 </code>
             </pre>
 
-            <img src="../../img/pages/sba3.png" alt="tela spring initializr" class="img-fluid">
-            <img src="../../img/pages/sba4.png" alt="tela spring initializr" class="img-fluid">
+          <img
+            src="../../img/pages/sba3.png"
+            alt="tela spring initializr"
+            class="img-fluid"
+          />
+          <img
+            src="../../img/pages/sba4.png"
+            alt="tela spring initializr"
+            class="img-fluid"
+          />
 
-            <p>Código disponível no <a href="https://github.com/marksduarte/spring-boot-admin">Github</a>.</p>
+          <p>
+            Código disponível no
+            <a href="https://github.com/marksduarte/spring-boot-admin">Github</a
+            >.
+          </p>
 
-            <p>Por enquanto é só. Até mais! ;)</p>
+          <p>Por enquanto é só. Até mais! ;)</p>
         </article>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Bootstrap core JavaScript -->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Custom scripts for this template -->
-<script src="/js/marksduarte.min.js"></script>
-<script
-        src="https://kit.fontawesome.com/a1107b690f.js"
-        crossorigin="anonymous"
-></script>
-</body>
+    <div class="btn-social-share-group">
+      <a
+        class="btn btn-outline-secondary btn-social"
+        href="https://twitter.com/intent/tweet?text=Como%20registrar%20uma%20aplicação%20cliente%20num%20servidor%20de%20monitoramento
+%20Spring%20Boot%20Admin.&amp;url=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fjava%2Fspring-boot-admin.html"
+        target="_blank"
+        ><i class="fa fa-twitter"></i
+      ></a>
+      <a
+        class="btn btn-outline-secondary btn-social fb-xfbml-parse-ignore"
+        data-href="https://marksduarte.dev/pages/java/spring-boot-admin.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fjava%2Fspring-boot-admin.html&amp;src=sdkpreparse"
+        target="_blank"
+        ><i class="fa fa-facebook"></i
+      ></a>
+      <a
+        class="btn btn-outline-secondary btn-social"
+        href="https://linkedin.com/shareArticle?url=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fjava%2Fspring-boot-admin.html&title=Como%20registrar%20uma%20aplicação%20cliente%20num%20servidor%20de%20monitoramento
+        %20Spring%20Boot%20Admin"
+        target="_blank"
+        ><i class="fa fa-linkedin"></i
+      ></a>
+    </div>
+
+    <a
+      href="#"
+      class="js-scroll-trigger scroll-to-top btn btn-outline-secondary"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="/js/marksduarte.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c6cff8cc93.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v16.0"
+      nonce="vBWghoca"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+  </body>
 </html>

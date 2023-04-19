@@ -8,8 +8,19 @@
     />
     <meta name="description" content="Web Developer" />
     <meta name="author" content="Marks Duarte" />
+    <meta
+      property="og:url"
+      content="https://marksduarte.dev/pages/windows/limitar-recursos-wsl.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Limitar Recursos WSL 2" />
+    <meta
+      property="og:description"
+      content="Como limitar o consumo de recursos pelo WSL 2"
+    />
+    <meta property="og:image" content="https://marksduarte.dev/img/logo.jpg" />
 
-    <title>Migrar Distros WSL 2</title>
+    <title>Limitar Recursos WSL 2</title>
 
     <!-- Custom fonts -->
     <link
@@ -105,14 +116,14 @@
 
         <section class="lead text-justify">
           <p>
-            Ao utilizarmos o WSL2 no Windows, por padrão, o consumo de memória
-            e de processamento fica sem restrição e esse comportamento pode
-            acabar afetando o desempenho do Host.
+            Ao utilizarmos o WSL2 no Windows, por padrão, o consumo de memória e
+            de processamento fica sem restrição e esse comportamento pode acabar
+            afetando o desempenho do Host.
           </p>
           <p>
             Para contornarmos tal situação, podemos criar um arquivo de
-            configuração chamado '.wslconfig' na pasta de usuário localizada
-            em: c:\users\username\.wslconfig.
+            configuração chamado '.wslconfig' na pasta de usuário localizada em:
+            c:\users\username\.wslconfig.
           </p>
           <p>Agora informe as restrições desejadas conforme exemplo:</p>
           <pre>
@@ -123,8 +134,8 @@
               </code>
             </pre>
           <p>
-            Após salvar as alterações, reinicie o serviço executando o
-            seguinte comando como Administrador:
+            Após salvar as alterações, reinicie o serviço executando o seguinte
+            comando como Administrador:
           </p>
           <pre>
               <code>
@@ -135,14 +146,43 @@
             Para mais informações, você pode consultar a documentação completa
             em:
             <a
-                    href="https://learn.microsoft.com/pt-br/windows/wsl/wsl-config#wslconfig"
-            >Microsoft - Docs</a
+              href="https://learn.microsoft.com/pt-br/windows/wsl/wsl-config#wslconfig"
+              >Microsoft - Docs</a
             >
           </p>
           <p>Espero ter ajudado e até a próxima.</p>
         </section>
       </div>
     </section>
+
+    <div class="btn-social-share-group">
+      <a
+        class="btn btn-outline-secondary btn-social"
+        href="https://twitter.com/intent/tweet?text=Como limitar o consumo de recursos pelo WSL 2&amp;url=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fwindows%2Flimitar-recursos-wsl.html"
+        target="_blank"
+        ><i class="fa fa-twitter"></i
+      ></a>
+      <a
+        class="btn btn-outline-secondary btn-social fb-xfbml-parse-ignore"
+        data-href="https://marksduarte.dev/pages/windows/limitar-recursos-wsl.html"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fwindows%2Flimitar-recursos-wsl.html&amp;src=sdkpreparse"
+        target="_blank"
+        ><i class="fa fa-facebook"></i
+      ></a>
+      <a
+        class="btn btn-outline-secondary btn-social"
+        href="https://linkedin.com/shareArticle?url=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fwindows%2Flimitar-recursos-wsl.html&title=Como limitar o consumo de recursos pelo WSL 2"
+        target="_blank"
+        ><i class="fa fa-linkedin"></i
+      ></a>
+    </div>
+
+    <a
+      href="#"
+      class="js-scroll-trigger scroll-to-top btn btn-outline-secondary"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
@@ -154,8 +194,20 @@
     <!-- Custom scripts for this template -->
     <script src="/js/marksduarte.min.js"></script>
     <script
-      src="https://kit.fontawesome.com/a1107b690f.js"
+      src="https://kit.fontawesome.com/c6cff8cc93.js"
       crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v16.0"
+      nonce="vBWghoca"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
     ></script>
   </body>
 </html>
