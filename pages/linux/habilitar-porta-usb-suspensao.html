@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Web Developer" />
+    <meta name="author" content="Marks Duarte" />
+
+    <meta
+      property="og:url"
+      content="https://marksduarte.dev/pages/java/deploy-war-tomcat.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Como habilitar para que as portas USB acordem o computador"
+    />
+    <meta
+      property="og:description"
+      content="Como habilitar para que as portas USB acordem o computador"
+    />
+    <meta property="og:image" content="https://marksduarte.dev/img/logo.jpg" />
+
+    <title>Como habilitar para que as portas USB acordem o computador</title>
+
+    <!-- Custom fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Theme CSS -->
+    <link href="/css/marksduarte.min.css" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png" />
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/img/logo.png" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+
+  <body id="tips">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="/index.html"
+          >Marks Duarte</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="/index.html#article"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="#tips"
+                >Dicas</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                type="button"
+                id="openWhatsappAPIModal"
+                data-toggle="modal"
+                data-target="#waAPI"
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                >WhatsApp API</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="page-section">
+      <div class="container">
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0 pt-lg-5"
+        >
+          Como habilitar para que as portas USB acordem o computador
+        </h2>
+
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon">
+            <div class="btn-social-share-group">
+              <a
+                class="btn btn-outline-secondary btn-social"
+                href="https://twitter.com/intent/tweet?text=Como fazer deploy de um arquivo war diretamente no Apache Tomcat&amp;url=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fjava%2Fdeploy-war-tomcat.html"
+                target="_blank"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-outline-secondary btn-social fb-xfbml-parse-ignore"
+                data-href="https://marksduarte.dev/pages/java/deploy-war-tomcat.html"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fjava%2Fdeploy-war-tomcat.html&amp;src=sdkpreparse"
+                target="_blank"
+                ><i class="fa fa-facebook"></i
+              ></a>
+              <a
+                class="btn btn-outline-secondary btn-social"
+                href="https://linkedin.com/shareArticle?url=https%3A%2F%2Fmarksduarte.dev%2Fpages%2Fjava%2Fdeploy-war-tomcat.html&title=Como fazer deploy de um arquivo war diretamente no Apache Tomcat"
+                target="_blank"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+          <div class="divider-custom-line"></div>
+        </div>
+
+        <muted class="fs-italic">Testado no Ubuntu 23.04</muted>
+        <img
+          src="../../img/pages/ubuntu.jpg"
+          alt="tela spring initializr"
+          class="img-fluid"
+        />
+
+        <article class="lead text-justify">
+          <p>Liste os dispositivos que podem acordar o sistema:</p>
+          <pre>
+              <code>
+  grep . /sys/bus/usb/devices/*/power/wakeup
+              </code>
+            </pre>
+          <p>
+            O resultado será uma lista de dispositivos com a indicação de
+            habilitado ou desabilitado:
+          </p>
+          <pre>
+              <code>
+  /sys/bus/usb/devices/usb1/power/wakeup:disabled
+  /sys/bus/usb/devices/usb2/power/wakeup:disabled
+  /sys/bus/usb/devices/usb3/power/wakeup:disabled
+  /sys/bus/usb/devices/usb4/power/wakeup:disabled
+              </code>
+            </pre>
+          <p>
+            Agora vamos editar o arquivo rc.local para habilitar os dispositivos
+            mesmo após o reinicio do sistema:
+          </p>
+          <pre>
+              <code>
+  sudo nano /etc/rc.local
+
+  echo enabled > /sys/bus/usb/devices/usb1/power/wakeup
+  echo enabled > /sys/bus/usb/devices/usb2/power/wakeup
+  echo enabled > /sys/bus/usb/devices/usb3/power/wakeup
+  echo enabled > /sys/bus/usb/devices/usb4/power/wakeup
+              </code>
+            </pre>
+          <p>Salve o arquivo e pronto. Espero ter ajudado.</p>
+        </article>
+      </div>
+    </section>
+
+    <a
+      href="#"
+      class="js-scroll-trigger scroll-to-top btn btn-outline-secondary"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/js/marksduarte.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c6cff8cc93.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v16.0"
+      nonce="vBWghoca"
+    ></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>
