@@ -172,14 +172,63 @@
               <code>
   sudo nano /etc/rc.local
 
+  #!/bin/bash
   echo enabled > /sys/bus/usb/devices/usb1/power/wakeup
   echo enabled > /sys/bus/usb/devices/usb2/power/wakeup
   echo enabled > /sys/bus/usb/devices/usb3/power/wakeup
   echo enabled > /sys/bus/usb/devices/usb4/power/wakeup
               </code>
             </pre>
-          <p>Salve o arquivo e pronto. Espero ter ajudado.</p>
+
+          <p>Verifique se o serviço está habilitado:</p>
+          <pre>
+            <code>
+  sudo systemctl status rc-local
+            </code>
+          </pre>
+
+          <p>Caso o serviço não exista ou tenha algum erro na execução, podemos configurar o mesmo da seguinte maneira:</p>
+          <pre>
+            <code>
+  sudo vi /etc/systemd/system/rc-local.service
+
+  [Unit]
+  Description=/etc/rc.local Compatibility
+  ConditionPathExists=/etc/rc.local
+
+  [Service]
+  Type=forking
+  ExecStart=/etc/rc.local start
+  TimeoutSec=0
+  StandardOutput=tty
+  RemainAfterExit=yes
+  SysVStartPriority=99
+
+  [Install]
+  WantedBy=multi-user.target
+            </code>
+          </pre>
+
+          <p>Salve e feche o arquivo e dê permissão de execução:</p>
+          <pre>
+            <code>
+  sudo chmod +x /etc/rc.local
+            </code>
+          </pre>
+          <p>Pronto. Agora habilite para que o serviço seja executado na inicialização do sistema:</p>
+          <pre>
+            <code>
+  sudo systemctl enable rc-local
+            </code>
+          </pre>
+          <p>Após a reinicialização, verifique se o serviço está ativo:</p>
+          <pre>
+            <code>
+  sudo systemctl status rc-local
+            </code>
+          </pre>
         </article>
+        <p>Espero ter ajudado. Até a próxima.</p>
       </div>
     </section>
 
