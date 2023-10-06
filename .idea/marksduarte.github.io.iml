@@ -9,4 +9,7 @@
     <orderEntry type="library" name="c6cff8cc93" level="application" />
     <orderEntry type="library" name="a1107b690f" level="application" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="c1cca22d-1737-468b-b39c-6d9c5e396b38" />
+  </component>
 </module>
