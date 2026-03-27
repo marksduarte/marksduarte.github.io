@@ -1,668 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="Web Developer" />
-    <meta name="author" content="Marks Duarte" />
-
-    <title>Marks Duarte - Web Developer</title>
-
-    <!-- Custom fonts -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidatura Síndico - Marks William</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
-      type="text/css"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
 
-    <!-- Theme CSS -->
-    <link href="css/marksduarte.min.css" rel="stylesheet" />
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f3f4f6;
+      }
 
-    <link rel="icon" type="image/png" sizes="192x192" href="/img/logo.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/logo.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/img/logo.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/logo.png" />
+      .gradient-bg {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      }
 
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/img/logo.png" />
-    <meta name="theme-color" content="#ffffff" />
+      .card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .photo-container {
+        border: 4px solid white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      @media print {
+        .no-print {
+          display: none;
+        }
+        body {
+          background: white;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #e5e7eb;
+        }
+      }
+    </style>
   </head>
-
-  <body id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"
-          >Marks Duarte</a
-        >
-        <button
-          class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#tips"
-                >Dicas</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#repos"
-                >Projetos</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#about"
-                >Sobre</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="#contact"
-                >Contato</a
-              >
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a
-                type="button"
-                id="openWhatsappAPIModal"
-                data-toggle="modal"
-                data-target="#waAPI"
-                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                >WhatsApp API</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="waAPI"
-      tabindex="-1"
-      aria-labelledby="waAPILabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="waAPILabel">Whatsapp API</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <!-- Header / Perfil -->
+      <header
+        class="gradient-bg text-white rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-xl"
+      >
+        <div class="relative">
+          <div
+            class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden photo-container bg-gray-200"
+          >
+            <!-- Foto do Candidato -->
+            <img
+              src="img/perfil.png"
+              alt="Marks William Duarte de Souza"
+              class="w-full h-full object-cover"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?name=Marks+William&size=200&background=0D8ABC&color=fff'
+              "
+            />
           </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="waPhoneNumber">Número de telefone</label>
-              <input
-                id="waPhoneNumber"
-                type="text"
-                class="form-control phone"
-                value="55"
-              />
-            </div>
-            <div class="form-group">
-              <label for="waMessage">Mensagem</label>
-              <textarea
-                id="waMessage"
-                class="form-control"
-                cols="30"
-                rows="10"
-                maxlength="4096"
-              ></textarea>
-              <label id="waMessageSpan" class="text-muted">
-                <span id="count">0</span>
-                <span>de 4096 caracteres</span>
-              </label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Fechar
-            </button>
-            <button
-              id="waRedirect"
-              type="button"
-              class="btn btn-primary"
-              onclick="redirectToWhatsappAPI()"
-            >
-              Enviar <i class="fa-solid fa-paper-plane ml-1"></i>
-            </button>
+          <div
+            class="absolute -bottom-2 -right-2 bg-yellow-400 text-blue-900 font-bold px-4 py-1 rounded-full text-sm shadow-md"
+          >
+            Unidade 605
           </div>
         </div>
+
+        <div class="flex-1 text-center md:text-left space-y-2">
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+            Marks Duarte
+          </h1>
+          <div class="h-1 w-20 bg-yellow-400 mx-auto md:mx-0 my-4"></div>
+          <p
+            class="text-lg font-semibold uppercase tracking-widest text-yellow-300"
+          >
+            Candidato a Síndico • Luna Bella
+          </p>
+        </div>
+      </header>
+
+      <!-- Apresentação -->
+      <section class="card p-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
+            <i class="fas fa-user-tie text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800">Apresentação</h3>
+        </div>
+        <div class="text-gray-600 leading-relaxed space-y-4 text-lg">
+          <p>
+            Olá! Sou morador e proprietário no
+            <strong>Luna Bella desde 2018</strong>. Tenho acompanhado a gestão
+            de perto e, após atuar nos trabalhos da comissão, senti a
+            necessidade de me colocar à disposição como síndico.
+          </p>
+          <p>
+            Hoje nosso condomínio está enfrentando um momento crítico pelo
+            tamanho do descontrole e descaso da atual gestão, que deixou chegar
+            numa situação financeira alarmante, com dívidas acumuladas e falta
+            de transparência. Acredito que, com uma gestão comprometida e
+            transparente, podemos reverter esse cenário e garantir um ambiente
+            mais seguro, valorizado e agradável para todos os condôminos.
+          </p>
+          <p>
+            Sei que a missão é complexa, mas não podemos nos acovardar diante de
+            desafios que impactam diretamente nossos
+            <strong>sonhos e qualidade de vida</strong>. Estou pronto para
+            trabalhar incansavelmente, ouvindo cada morador e buscando soluções
+            eficazes para recuperar a saúde financeira do nosso condomínio.
+          </p>
+          <p>Juntos, podemos construir um futuro melhor para o Luna Bella!</p>
+        </div>
+      </section>
+
+      <!-- Plano de Gestão -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Pilares de Mudança -->
+        <section class="card p-8 border-t-4 border-yellow-400">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-yellow-400 text-blue-900 p-3 rounded-lg">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800">Compromissos</h3>
+          </div>
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">Arrecadação</h4>
+              <p class="text-sm text-gray-600">
+                Buscar formas de aumentar a receita do condomínio com parcerias
+                que agregam valor, como a instalação de telas de publicidade nos
+                elevadores, mini-mercados automáticos, parcerias com comércios
+                locais e etc.
+              </p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">Valorização</h4>
+              <p class="text-sm text-gray-600">
+                Levantar, junto aos condôminos, propostas para a revitalização
+                dos espaços de convivência, como a academia, o hall de entrada,
+                a criação de um espaço de lazer para as crianças e etc.
+              </p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">
+                Convivência e Segurança
+              </h4>
+              <p class="text-sm text-gray-600">
+                Aplicação justa do regimento interno, revisão de sistemas de
+                segurança, portaria e iluminação, além de buscar sugestões de
+                melhorias baseadas nas necessidades dos condôminos.
+              </p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">Jurídico</h4>
+              <p class="text-sm text-gray-600">
+                Buscar informações e atuar junto ao jurídico para ganhar a causa
+                judicial das pastilhas, protegendo os interesses do condomínio.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Financeiro -->
+        <div>
+          <section class="card p-8 border-t-4 border-blue-600">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-blue-600 text-white p-3 rounded-lg">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">
+                Gestão Financeira
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Revisão de Contratos:</strong> Analisar todos os
+                  acordos vigentes para garantir o melhor custo-benefício.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Recuperação Fiscal:</strong> Elaborar um plano de
+                  ação para quitar impostos em atraso e regularizar o
+                  condomínio.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Transparência Real:</strong> Prestação de contas
+                  regular, detalhada e de fácil compreensão para todos.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Otimização de Custos:</strong> Reduzir desperdícios
+                  sem comprometer a manutenção e segurança.</span
+                >
+              </li>
+            </ul>
+          </section>
+
+          <section class="card p-8 border-t-4 border-green-600 mt-3">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-green-600 text-white p-3 rounded-lg">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">Comunicação</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">
+                  <strong>Assembleias:</strong> Convocar reuniões com mais
+                  frequência e de forma hibrida.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">
+                  <strong>Informativos periódicos:</strong> utilizar de meios
+                  físicos e digitais para enviar boletins dos últimos
+                  acontecimentos no condomínio.
+                </span>
+              </li>
+            </ul>
+          </section>
+        </div>
       </div>
+
+      <!-- Footer / CTA -->
+      <footer class="text-center py-8 space-y-4">
+        <p class="text-xl font-medium text-gray-700">
+          Pela mudança que o <strong>Luna Bella</strong> precisa.
+        </p>
+        <!-- <div class="flex justify-center gap-4 no-print">
+          <button
+            onclick="window.print()"
+            class="bg-gray-800 text-white px-6 py-2 rounded-full hover:bg-gray-700 transition flex items-center gap-2"
+          >
+            <i class="fas fa-print"></i> Imprimir Infográfico
+          </button>
+        </div> -->
+        <p class="text-xs text-gray-400 uppercase tracking-widest">
+          Compromisso • Transparência • Trabalho
+        </p>
+      </footer>
     </div>
-
-    <!-- Masthead -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image -->
-        <img
-          class="masthead-avatar mb-5 rounded-circle"
-          src="img/logo.png"
-          alt="Avatar"
-        />
-
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0">Marks Duarte</h1>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Masthead Subheading -->
-        <p class="masthead-subheading font-weight-light mb-0">Web Developer</p>
-      </div>
-    </header>
-
-    <!-- Tips Section -->
-    <section class="page-section" id="tips">
-      <div class="container">
-        <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
-          Dicas
-        </h2>
-
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-        <!-- Cards -->
-        <div class="row card-group">
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="pages/windows/migrar-distro-wsl.html"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/windows-icon.svg"
-                    alt="Windows logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Migrar Distros WSL 2</h4>
-                  </div>
-                  <div class="card-text">
-                    Aprenda como mover os discos virtuais das distribuições
-                    Linux para outros diretórios.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#windows</span>
-                    <span class="badge badge-secondary">#wsl2</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="pages/windows/limitar-recursos-wsl.html"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/windows-icon.svg"
-                    alt="Windows logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Limitar Recursos WSL 2</h4>
-                  </div>
-                  <div class="card-text">
-                    Aprenda como limitar o consumo de memória e processamento do
-                    WSL2.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#windows</span>
-                    <span class="badge badge-secondary">#wsl2</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="pages/java/deploy-war-tomcat.html"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/java-icon.svg"
-                    alt="Java logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Deploy WAR no Tomcat</h4>
-                  </div>
-                  <div class="card-text">
-                    Aprenda como fazer o deploy de uma aplicação empacotada como
-                    war, diretamente no Apache Tomcat.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#java</span>
-                    <span class="badge badge-secondary">#maven</span>
-                    <span class="badge badge-secondary">#tomcat</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="pages/java/spring-boot-admin.html"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/spring-boot-icon.svg"
-                    alt="Java logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Spring Boot Admin</h4>
-                  </div>
-                  <div class="card-text">
-                    Aprenda como registrar uma aplicação cliente no servidor
-                    <strong>Spring Boot Admin</strong>
-                    com uma camada de segurança do Spring Security.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#java</span>
-                    <span class="badge badge-secondary">#springboot</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="pages/linux/habilitar-porta-usb-suspensao.html"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/linux-icon.svg"
-                    alt="Java logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Acordar sistemas Linux</h4>
-                  </div>
-                  <div class="card-text">
-                    Aprenda como configurar para que o sistema Linux acorde após
-                    a suspensão.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#linux</span>
-                    <span class="badge badge-secondary">#ubuntu</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Repos Section -->
-    <section class="page-section" id="repos">
-      <div class="container">
-        <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
-          Projetos
-        </h2>
-
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-code-fork"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Cards -->
-        <div class="row card-group">
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="https://github.com/marksduarte/spring-boot-admin"
-                target="_blank"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/github-icon.svg"
-                    alt="Github logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Spring Boot Admin</h4>
-                  </div>
-                  <div class="card-text">
-                    Exemplo de como registrar uma aplicação cliente no servidor
-                    <strong>Spring Boot Admin</strong>
-                    com uma camada de segurança do Spring Security.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#java</span>
-                    <span class="badge badge-secondary">#springboot</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="https://github.com/marksduarte/spring-boot-admin"
-                target="_blank"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/github-icon.svg"
-                    alt="Github logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Google Maps Calculator</h4>
-                  </div>
-                  <div class="card-text">
-                    Extensão para o Google Chrome para injetar uma barra no topo
-                    da página e calcular o consumo de combustível com base na
-                    distância entre as localidades.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#html</span>
-                    <span class="badge badge-secondary">#css</span>
-                    <span class="badge badge-secondary">#javascript</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="https://github.com/marksduarte/imap-mailbox-reader"
-                target="_blank"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/github-icon.svg"
-                    alt="Github logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Imap MailBox Reader</h4>
-                  </div>
-                  <div class="card-text">
-                    Faz uma varredura na caixa de entrada da conta de e-mail e
-                    extrai informações como: endereço, corpo e etc.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#java</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="https://github.com/marksduarte/springboot-base-project"
-                target="_blank"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/github-icon.svg"
-                    alt="Github logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Spring Boot Base Project</h4>
-                  </div>
-                  <div class="card-text">
-                    Projeto base para aplicação de boas práticas no uso do
-                    Spring Boot.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#java</span>
-                    <span class="badge badge-secondary">#springboot</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="mx-auto">
-              <a
-                class="card card-link"
-                href="https://github.com/marksduarte/microservices-springboot"
-                target="_blank"
-              >
-                <div class="card-body">
-                  <img
-                    src="img/icons/github-icon.svg"
-                    alt="Github logo"
-                    class="card-img-bottom-right"
-                  />
-                  <div class="card-title">
-                    <h4 class="text-dark">Microservices Spring Boot</h4>
-                  </div>
-                  <div class="card-text">
-                    Exemplos de uso do Spring Boot em microsserviços.
-                  </div>
-
-                  <div class="card-footer">
-                    <span class="badge badge-secondary">#java</span>
-                    <span class="badge badge-secondary">#springboot</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="page-section bg-primary text-white mb-0" id="about">
-      <div class="container">
-        <!-- About Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white">
-          Sobre
-        </h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- About Section Content -->
-        <div class="row">
-          <div class="col-lg mr-auto text-center">
-            <p class="lead">
-              Desenvolvedor web focado no back-end, com conhecimentos de
-              front-end <br />
-              e com experiência em planilhas do Microsoft Excel com VBA.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="page-section" id="contact">
-      <div class="container">
-        <!-- Contact Section Heading -->
-        <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
-          Contato
-        </h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
-          <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Contact Section Form -->
-        <div class="row text-center">
-          <div class="col-lg-12">
-            <a class="lead" href="mailto:eu@marksduarte.dev"
-              ><i class="fas fa-envelope"></i>eu@marksduarte.dev</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-        <div class="row">
-          <!-- Footer About Text -->
-          <div class="col-lg-4"></div>
-
-          <!-- Footer Social Icons -->
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h4 class="text-uppercase mb-4">Redes Sociais</h4>
-            <a
-              class="btn btn-outline-light btn-social mx-1"
-              href="https://github.com/marksduarte"
-              target="_blank"
-            >
-              <i class="fab fa-fw fa-github"></i>
-            </a>
-            <a
-              class="btn btn-outline-light btn-social mx-1"
-              href="https://medium.com/@marksduarte"
-              target="_blank"
-            >
-              <i class="fab fa-fw fa-medium"></i>
-            </a>
-            <a
-              class="btn btn-outline-light btn-social mx-1"
-              href="https://www.linkedin.com/in/marksduarte/"
-              target="_blank"
-            >
-              <i class="fab fa-fw fa-linkedin-in"></i>
-            </a>
-            <a
-              class="btn btn-outline-light btn-social mx-1"
-              href="https://bsky.app/profile/marksduarte.dev"
-              target="_blank"
-            >
-              <i class="fa-brands fa-bluesky"></i>
-            </a>
-          </div>
-
-          <!-- Footer About Text -->
-          <div class="col-lg-4"></div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Copyright Section -->
-    <section class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>Copyright &copy; Marks Duarte 2019</small>
-      </div>
-    </section>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Plugin JavaScript-->
-    <script src="vendor/jquery-mask-plugin/jquery.mask.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/marksduarte.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a1107b690f.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
