@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candidatura Síndico - Marks Duarte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fff;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      }
+
+      .card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .photo-container {
+        border: 4px solid white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      @media print {
+        .no-print {
+          display: none;
+        }
+        body {
+          background: white;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #e5e7eb;
+        }
+      }
+    </style>
+  </head>
+  <body class="p-1 md:p-1">
+    <div class="mx-auto space-y-6">
+      <!-- Header / Perfil -->
+      <header
+        class="gradient-bg text-white rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-xl"
+      >
+        <div class="relative">
+          <div
+            class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden photo-container bg-gray-200"
+          >
+            <!-- Foto do Candidato -->
+            <img
+              src="img/perfil.jpeg"
+              alt="Marks William Duarte de Souza"
+              class="w-full h-full object-cover"
+              onerror="
+                this.src =
+                  'https://ui-avatars.com/api/?name=Marks+William&size=200&background=0D8ABC&color=fff'
+              "
+            />
+          </div>
+          <div
+            class="absolute -bottom-2 -right-2 bg-yellow-400 text-blue-900 font-bold px-4 py-1 rounded-full text-sm shadow-md"
+          >
+            Unidade 605
+          </div>
+        </div>
+
+        <div class="flex-1 text-center md:text-left space-y-2">
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+            Marks Duarte
+          </h1>
+          <div class="h-1 w-20 bg-yellow-400 mx-auto md:mx-0 my-4"></div>
+          <p
+            class="text-lg font-semibold uppercase tracking-widest text-yellow-300"
+          >
+            Candidato a Síndico • Luna Bella
+          </p>
+        </div>
+      </header>
+
+      <!-- Apresentação -->
+      <section class="card p-8 border-t-4 border-blue-600">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
+            <i class="fas fa-user-tie text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800">Apresentação</h3>
+        </div>
+        <div class="text-gray-600 leading-relaxed space-y-4 text-lg">
+          <p>
+            Olá! Me chamo <strong>Marks Duarte</strong>, sou morador e
+            proprietário no <strong>Luna Bella desde 2018</strong>.
+          </p>
+          <p>
+            Tenho acompanhado a gestão de perto e, após atuar nos trabalhos da
+            comissão, senti a necessidade de me colocar à disposição como
+            síndico.
+          </p>
+          <p>
+            Hoje nosso condomínio está enfrentando um momento crítico pelo
+            tamanho do descontrole e descaso da atual gestão, que deixou chegar
+            numa situação financeira alarmante, com dívidas acumuladas e falta
+            de transparência. Acredito que, com uma gestão comprometida e
+            transparente, podemos reverter esse cenário e garantir um ambiente
+            mais seguro, valorizado e agradável para todos os condôminos.
+          </p>
+          <p>
+            Estou disposto a trabalhar incansavelmente, ouvir cada morador e
+            buscar soluções eficazes para recuperar a saúde financeira do nosso
+            condomínio.
+          </p>
+          <p>
+            Juntos, podemos construir um futuro melhor para o
+            <strong>Luna Bella</strong>!
+          </p>
+        </div>
+      </section>
+
+      <!-- Plano de Gestão -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Pilares de Mudança -->
+        <section class="card p-8 border-t-4 border-yellow-400">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="bg-yellow-400 text-blue-900 p-3 rounded-lg">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800">Compromissos</h3>
+          </div>
+          <div class="space-y-6">
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">Valorização</h4>
+              <p class="text-sm text-gray-600">
+                Levantar, junto aos condôminos, propostas para a revitalização
+                dos espaços de convivência, como a academia, o hall de entrada,
+                a criação de um espaço de lazer para as crianças e etc.
+              </p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">Arrecadação</h4>
+              <p class="text-sm text-gray-600">
+                Buscar formas de aumentar a receita do condomínio com parcerias
+                que agregam valor, como a instalação de telas de publicidade nos
+                elevadores, mini-mercados automáticos, parcerias com comércios
+                locais e etc.
+              </p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">
+                Convivência e Segurança
+              </h4>
+              <p class="text-sm text-gray-600">
+                Aplicação justa do regimento interno, revisão de sistemas de
+                segurança, portaria, iluminação e câmeras, além de buscar
+                sugestões de melhorias baseadas nas necessidades dos condôminos.
+              </p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl">
+              <h4 class="font-bold text-blue-800 mb-1">Jurídico</h4>
+              <p class="text-sm text-gray-600">
+                Atuar junto ao jurídico para ganhar a causa das
+                <strong>pastilhas</strong> e formar uma comissão para atualizar
+                o <strong>regimento interno</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Financeiro -->
+        <div class="flex flex-col">
+          <section class="card p-8 border-t-4 border-blue-600 grow">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-blue-600 text-white p-3 rounded-lg">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">
+                Gestão Financeira
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Revisão de Contratos:</strong> Analisar todos os
+                  acordos vigentes para garantir o melhor custo-benefício.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Recuperação Fiscal:</strong> Elaborar um plano de
+                  ação para quitar impostos em atraso e regularizar o
+                  condomínio.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Transparência Real:</strong> Prestação de contas
+                  regular, detalhada e de fácil compreensão para todos.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700"
+                  ><strong>Otimização de Custos:</strong> Reduzir custos sem
+                  comprometer a manutenção e segurança.</span
+                >
+              </li>
+            </ul>
+          </section>
+
+          <section class="card p-8 border-t-4 border-green-600 grow mt-3">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="bg-green-600 text-white p-3 rounded-lg">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-800">Comunicação</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">
+                  <strong>Assembleias:</strong> Convocar reuniões com mais
+                  frequência e de forma hibrida.
+                </span>
+              </li>
+              <li class="flex gap-3">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">
+                  <strong>Informativos periódicos:</strong> utilizar de meios
+                  físicos e digitais para enviar boletins dos últimos
+                  acontecimentos no condomínio.
+                </span>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <!-- Footer / CTA -->
+      <footer class="text-center py-1 space-y-4">
+        <p class="text-xl font-medium text-gray-700">
+          Pela mudança que o <strong>Luna Bella</strong> precisa.
+        </p>
+        <p class="text-xs text-gray-400 uppercase tracking-widest">
+          Compromisso • Transparência • Trabalho
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
